@@ -6,7 +6,6 @@ struct stack
     int data[100];
     int top;
 };
-//FILE *s=NULL,*p=NULL,*pp=NULL,*i=NULL,*o=NULL;
 void push(struct stack *sptr,int n);
 int pop(struct stack *sptr);
 void display(struct stack *sptr);
@@ -51,22 +50,6 @@ int main()
                    printf("c %d\n",c);
                 i=fopen("input2.txt","r");
                 e=0;
-                /*for(e=1;e<c;e++)
-                {
-                    printf("a %d\n",e);
-                }
-                if(e==c)
-                {
-                   printf("b %d\n",e);
-                    fscanf(i,"%d",&n[e]);
-                    z=n[e];
-                    printf("%d",z);
-                    push(sptr,z);
-                }
-                if(c>x)
-                 {   printf("d %d\n",c);
-                     printf("stack overflow\n");}
-                fclose(i);*/
                 while(fscanf(i,"%d",&n)!=EOF)
                 {
                     e++;
@@ -130,31 +113,6 @@ int pop(struct stack  *sptr)
 void display(struct stack  *sptr)
 {
     int i;
-    /*printf("5:display stack 6: display push 7:display pop");
-    scanf("%d",&n);
-    switch(n)
-    {
-        case 5: if(sptr->top==-1)
-                   printf("stack is empty\n");
-                else
-                 {
-                   for(i=sptr->top;i>=0;i--)
-                     {
-                       printf("->%d",sptr->data[i]);
-                     }
-                 }
-        break;
-        case 6:  p=fopen("push.txt","r");
-            for(i=0;i<c;i++)
-                {
-                    fscanf(p,"%d",&q);
-                    printf("%d ",q);
-                }
-                fclose(p);
-        break;
-        case 7: pp=fopen("pop.txt","r");
-        for
-    }*/
     if(sptr->top==-1)
                    printf("stack is empty\n");
                 else
