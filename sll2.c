@@ -1,5 +1,4 @@
-//SLL ALL FUNCTIONS
-#include<stdio.h> //searching nodes
+#include<stdio.h> 
 #include<stdlib.h>
 
 struct node
