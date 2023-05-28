@@ -1,4 +1,4 @@
-#include<stdio.h> 
+#include<stdio.h>
 #include<stdlib.h>
 
 struct node
@@ -17,6 +17,7 @@ NODE delete_front(NODE head);
 NODE delete_end(NODE head);
 NODE delete_pos(NODE head);
 int count_nodes(NODE head);
+NODE reverse(NODE head);
 void display_list(NODE head);
 
 
@@ -26,7 +27,7 @@ int main()
   int ch, count;
   while(1)
   {
-      printf("1:insert_end 2:insert_front 3:insert_pos 4:delete_end 5:delete_front 6:delete_pos 7:display 8:Exit\n");
+      printf("\n1:insert_end 2:insert_front 3:insert_pos 4:delete_end 5:delete_front 6:delete_pos 7:display 8:reverse 9:Exit\n");
       printf("Enter your choice\n");
       scanf("%d",&ch);
       switch(ch)
@@ -45,7 +46,9 @@ int main()
                      break;
             case 7:display_list(head);
                      break;
-            case 8:exit(0);
+            case 8:head=reverse(head);
+                     break;
+            case 9:exit(0);
                      break;
         }
   }
@@ -278,6 +281,28 @@ int count_nodes(NODE head)
         }
     }
     return count;
+}
+NODE reverse(NODE head)
+{
+   int i,j,n,temp;
+   NODE prev,cur;
+   prev=head;
+   cur=prev->link;
+   n=count_nodes(head);
+   for(i=0;i<n-1;i++)
+   {
+        prev=head;
+        cur=prev->link;
+       for(j=0;j<n-i-1;j++)
+       {
+          temp=prev->data;
+          prev->data=cur->data;
+          cur->data=temp;
+           prev=cur;
+        cur=cur->link;
+       }
+   }
+   return head;
 }
 
 void display_list(NODE head)
