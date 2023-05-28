@@ -28,7 +28,6 @@ int main()
     }
     fclose(s);
     s=fopen("input.txt","r");
-    //c=fopen("output.txt","w");
     printf("\nenter the number of numbers to be sorted\n");
     scanf("%d",&x);
     l=fopen("log.txt","w");
@@ -38,7 +37,6 @@ int main()
     {
       fscanf(s,"%d",&a);
        h[i]=a;
-      //fprintf(c,"%d\n",a);
       printf("%d\t",h[i]);
     }
     fclose(s);
@@ -61,14 +59,10 @@ int main()
     end_t=clock();
     fprintf(l,"\ntime taken by insertion sort=%lf",total_t);
 
-     //clock_t start_t,end_t;
-    //double total_t;
     FILE *c;
    c=fopen("output.txt","a");
    fprintf(c,"\nquick sort\n");
-   //l=fopen("log.txt","a");
    fprintf(l,"\n");
- //  fprintf(l,"quick sort\n");
 
     start_t=clock();
      printf("\n%f",start_t);
@@ -80,7 +74,7 @@ int main()
     total_t=(double)((end_t-start_t))/CLOCKS_PER_SEC;
     printf("\ntime taken=%lf\n",total_t);
     fprintf(l,"\ntime taken by quick sort=%lf",total_t);
-     /*printf("the final array is\n"); for(i=0;i<x;i++) printf("\n %d\t",arr[i]);*/
+  
    fprintf(c,"\n");
     for(i=0;i<x;i++)
     {
@@ -88,14 +82,9 @@ int main()
         fprintf(c,"%d\t",h[i]);
     }
     fclose(c);
-    //fclose(l);
-   // FILE *c;
+  
    c=fopen("output.txt","a");
    fprintf(c,"\nmerge sort\n");
-  // l=fopen("log.txt","a+");
-   //fprintf(l,"\n");
-   //fprintf(l,"merge sort\n");
-//    clock_t start_t,end_t;
     start_t=clock();
     printf("\n%f",start_t);
 
@@ -106,7 +95,6 @@ int main()
      total_t=((double)(end_t-start_t))/CLOCKS_PER_SEC;
     printf("\ntime taken=%lf\n",total_t);
      fprintf(l,"\ntime taken by merge sort=%lf",total_t);
-    /*printf("the final array is\n"); for(i=0;i<x;i++) printf("\n %d\t",arr[i]);*/
      fprintf(c,"\n");
     for(i=0;i<x;i++)
     {
@@ -124,14 +112,8 @@ void b_sort(int h[1000],int x)
    fprintf(c,"bubble sort\n");
    l=fopen("log.txt","a");
    fprintf(l,"\n");
-   //fprintf(l,"bubble sort\n");
     int i,j,temp;
-   // time_t start,end; // start=time(NULL); //time(&start);
    printf("bubble sort\n");
-   //clock_t start_t,end_t;start_t=clock();
-   // double s= (double)(start_t);
-   //  printf("\n%f",s);
-    //struct timespec start,end; //clock_gettime(CLOCK_MONOTONIC,&start);
     for(i=0;i<x-1;i++)
     {
        for(j=0;j<x-i-1;j++)
@@ -144,14 +126,7 @@ void b_sort(int h[1000],int x)
            }
        }
     }
-   /* for(int cs=0;cs<10000000;cs++){}*/
-    //end=time(NULL);//double time_taken=(double)(end-start);
 
-   // clock_gettime(CLOCK_MONOTONIC,&end);//double time_taken=(end.tv_sec-start.tv_sec)+(end.tv_nsec-start.tv_nsec)/1000000000.0;
-
-  // //end_t=clock();double e= (double)(end_t);printf("\n%f",e); double total_t=((double)(end_t-start_t))/CLOCKS_PER_SEC;
-   //double time_taken=((double)(e-s))/CLOCKS_PER_SEC;// time(&end);//double time_taken=difftime(end,start);
-    //printf("\ntime taken=%lf\n",total_t); // fprintf(l,"\ntime taken by bubble sort=%lf",total_t);
     for(i=0;i<x;i++)
     {
         printf("%d ",h[i]);
@@ -167,9 +142,7 @@ void slc_sort(int arr[1000],int x)
    fprintf(c,"\nselection sort\n");
    l=fopen("log.txt","a");
    fprintf(l,"\n");
-  // fprintf(l,"\nselection sort\n");
    int i,j,min,temp;
-    //clock_t start_t,end_t;start_t=clock();printf("\n%f",start_t);
    for(i=0;i<x-1;i++)
    {
        min=i;
@@ -187,8 +160,7 @@ void slc_sort(int arr[1000],int x)
            arr[min]=temp;
        }
    }
-   // end_t=clock();printf("\n%f",end_t);double total_t=((double)(end_t-start_t))/CLOCKS_PER_SEC;printf("\ntime taken=%lf\n",total_t);fprintf(l,"\ntime taken by selection sort=%lf",total_t);
-   /*printf("the final array is\n"); for(i=0;i<x;i++) printf("\n %d\t",arr[i]);*/
+
    fprintf(c,"\n");
     for(i=0;i<x;i++)
     {
@@ -206,7 +178,6 @@ void ins_sort(int arr[1000],int x)
   fprintf(c,"\ninsertion sort\n");
   l=fopen("log.txt","a");
    fprintf(l,"\n");
-//   fprintf(l,"insertion sort\n");
    int i,j,temp;
     clock_t start_t,end_t;
     start_t=clock();
@@ -223,9 +194,6 @@ void ins_sort(int arr[1000],int x)
        }
        arr[j+1]=temp;
     }
-
-    //end_t=clock();printf("\n%f",end_t);double total_t=((double)(end_t-start_t))/CLOCKS_PER_SEC;printf("\ntime taken=%lf\n",total_t);fprintf(l,"\ntime taken by insertion sort=%lf",total_t);
-   /*printf("the final array is\n"); for(i=0;i<x;i++) printf("\n %d\t",arr[i]);*/
    fprintf(c,"\n");
     for(i=0;i<x;i++)
     {
@@ -277,12 +245,10 @@ int partition(int arr[1000],int lb,int ub)
 
 void merge_sort(int arr[1000],int lb,int ub)
 {
-    // printf("%d %d\n",lb,ub);
    if(lb<ub)
    {
        int m;
        m=(lb+ub)/2;
-      // printf("%d %d %d\n",lb,m,ub);
        merge_sort(arr,lb,m);
        merge_sort(arr,m+1,ub);
        merge(arr,lb,m,ub);
