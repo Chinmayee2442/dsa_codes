@@ -35,7 +35,6 @@ void key(char str[][100])
     char keey[26];
     printf("enter the key string\n");
     gets(keey);
-   // int c=strlen(keey);
     int i=0,j=0,k=0,l;
     for(l=0;l<10;l++)
     {
@@ -44,22 +43,12 @@ void key(char str[][100])
         {
         if(str[l][i]==keey[0])
         {
-           // printf("\n%c",str[l][i]);
-            //printf("\n%s",str[l]);
-
-            //for(j=0;j<4;j++)
-    //       // k=0;
            j=0;
-   //         while(j!=4)
            for(j=i;j<i+4;j++)
             {
-               // printf("\n%c",str[l][i+j]);
-                //printf("\n%c",keey[j]);
                if(str[l][j]==keey[k])
-    //         if(str[l][i+j]==keey[j])
                 {
                     k++;
-    //                j++;
                    while(keey[j+1]=='\0')
                    {
                        printf("\nthe string is %s",str[l]);
@@ -70,9 +59,6 @@ void key(char str[][100])
         }
         i++;
         }
-        //printf("\nk=%d",k);
-       // if(k==0)
-       // printf("\nthe string %s",str[l]);
 
     }
 }
