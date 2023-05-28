@@ -49,11 +49,9 @@ void mult(int mat1[row][col],int mat2[row][col])
        {
           for(k=0;k<col;k++)
            {
-             //printf("numbers= %d\t %d\n",(*(*(mat1+x)+k)),(*(*(mat2+k)+y)));
              sum=sum+((*(*(mat1+x)+k)) * (*(*(mat2+k)+y)));
 
            }
-           //printf("%d\t",sum);
            *(*(res+x)+y)=sum;
            sum=0;
        }
@@ -61,4 +59,3 @@ void mult(int mat1[row][col],int mat2[row][col])
    printf("\n");
    print(res);
 }
-//1 2 3 4 5 6 7 8 9
