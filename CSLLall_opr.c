@@ -245,30 +245,6 @@ NODE insert_pos(NODE tail)
     }
     return tail;
 }
-/*NODE search_and_delete(NODE tail)
-{
-    int n=count_nodes(tail);
-    int a;
-    int i=1,j=0;
-    NODE cur=tail->link,temp;
-    printf("enter the number you want to search and delete throughout the list\n");
-    scanf("%d",&a);
-    for(i=1;i<=n-j;i++)
-    {
-       if(cur->data==a)
-       {
-           temp=cur->link;
-           tail=delete_pos(tail,i);
-           cur=temp;
-           i--;
-           j++;
-       }
-       else{
-       cur=cur->link;
-       }
-    }
-   return tail;
-}*/
 NODE search_and_delete(NODE tail)
 {
     int n=count_nodes(tail);
