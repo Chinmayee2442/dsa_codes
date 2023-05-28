@@ -47,16 +47,19 @@ int main()
     start_t=clock();
     b_sort(h,x);
     end_t=clock();
+    total_t=((double)(end_t-start_t))/CLOCKS_PER_SEC;
     fprintf(l,"\ntime taken by bubble sort=%lf",total_t);
 
     start_t=clock();
     slc_sort(h,x);
     end_t=clock();
+    total_t=((double)(end_t-start_t))/CLOCKS_PER_SEC;
     fprintf(l,"\ntime taken by selection sort=%lf",total_t);
 
     start_t=clock();
     ins_sort(h,x);
     end_t=clock();
+    total_t=((double)(end_t-start_t))/CLOCKS_PER_SEC;
     fprintf(l,"\ntime taken by insertion sort=%lf",total_t);
 
     FILE *c;
@@ -71,7 +74,7 @@ int main()
 
     end_t=clock();
     printf("\n%f",end_t);
-    total_t=(double)((end_t-start_t))/CLOCKS_PER_SEC;
+    total_t=((double)(end_t-start_t))/CLOCKS_PER_SEC;
     printf("\ntime taken=%lf\n",total_t);
     fprintf(l,"\ntime taken by quick sort=%lf",total_t);
   
